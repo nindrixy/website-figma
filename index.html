@@ -1,61 +1,639 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bloom — Flowers for every feeling</title>
-<style>
-:root{--ink:#222b2c;--muted:#70716c;--cream:#fff5e4;--pink:#f4dce0;--rose:#bc7180;--green:#b6c799;--navy:#263744;--line:#e8e2d9;--white:#fffdf9;--serif:Georgia,'Times New Roman',serif}
-*{box-sizing:border-box}body{margin:0;background:#f6f4ef;color:var(--ink);font:12px/1.45 Arial,Helvetica,sans-serif}button,input,select,textarea{font:inherit}button,a{cursor:pointer}a{color:inherit;text-decoration:none}.site{width:min(100%,1100px);margin:auto;background:white;min-height:100vh;box-shadow:0 0 18px #0000000a}.announcement{height:23px;background:var(--cream);display:flex;justify-content:center;align-items:center;font-size:9px;letter-spacing:.15px}.header{height:49px;display:flex;align-items:center;gap:28px;padding:0 4.8%;border-bottom:1px solid #efede8;background:#fff;position:sticky;top:0;z-index:20}.logo{font:700 15px var(--serif);color:#3b513d;white-space:nowrap;letter-spacing:-.4px}.logo small{display:block;font:6px Arial;letter-spacing:1.7px;text-align:center;margin-top:-1px}.nav{display:flex;align-items:center;gap:18px;flex:1;font-size:9px}.nav a{white-space:nowrap;padding:6px 0}.nav a.active{color:#ad6270;border-bottom:1px solid #ad6270}.tools{display:flex;gap:11px;align-items:center}.tools button{border:0;background:transparent;font-size:15px;padding:1px;color:#303635}.mobile{display:none}.page{display:none}.page.active{display:block}.wrap{padding:22px 4.8% 27px}.hero{display:grid;grid-template-columns:1fr .95fr;background:var(--cream);min-height:255px;overflow:hidden}.hero-copy{padding:27px 6% 22px 9%;align-self:center}.kicker{font-size:8px;text-transform:uppercase;letter-spacing:1.2px;color:#737c69}.h1{font:700 clamp(26px,3vw,39px)/.99 var(--serif);letter-spacing:-.7px;margin:8px 0 11px}.lead{max-width:300px;color:#595b54;font-size:10px;line-height:1.6}.hero-img{position:relative;min-height:255px;background:#f0e4d1;overflow:hidden}.hero-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.btn{border:1px solid var(--rose);background:var(--rose);color:white;padding:8px 13px;min-height:28px;font-size:9px;display:inline-flex;align-items:center;justify-content:center;gap:6px}.btn.outline{background:transparent;color:#333;border-color:#c6b9ad}.btn.dark{background:var(--navy);border-color:var(--navy)}.btn.small{padding:5px 8px;min-height:23px;font-size:8px}.hero-actions{display:flex;gap:7px;margin-top:15px;flex-wrap:wrap}.ticker{background:var(--pink);padding:7px 4.8%;display:flex;justify-content:space-between;gap:10px;font-size:8px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:20px 0 10px}.section-head h2{margin:0}.h2{font:700 21px/1.1 var(--serif);letter-spacing:-.3px;margin:4px 0 10px}.h3{font:700 13px/1.15 var(--serif);margin:7px 0 3px}.textlink{text-decoration:underline;text-underline-offset:2px;font-size:9px;white-space:nowrap}.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.product{border:1px solid #eee9e1;padding:5px;min-width:0;background:#fff;position:relative}.photo{height:135px;background:#f7f0e5;overflow:hidden;position:relative}.photo img{width:100%;height:100%;object-fit:cover}.heart{position:absolute;right:5px;top:5px;background:#fff;border:0;border-radius:50%;width:23px;height:23px;font-size:14px;color:#a75e6c}.product .name{font:700 11px var(--serif);margin:7px 0 2px}.muted{font-size:8px;color:#777}.product-bottom{display:flex;justify-content:space-between;align-items:center;gap:5px;margin-top:7px}.price{font-size:9px;font-weight:bold;white-space:nowrap}.add{font-size:8px;border:1px solid #d8cfc5;background:#fff;padding:5px 6px}.mini-pill{font-size:7px;border:1px solid #e7c9ce;border-radius:8px;padding:2px 6px;color:#8e5d66;display:inline-block;margin-bottom:4px}.greenband{background:var(--green);padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:14px;margin:22px 0}.greenband h2{font:700 20px var(--serif);margin:0 0 4px}.greenband p{font-size:9px;margin:0}.feature{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}.feature img{width:100%;height:180px;object-fit:cover}.footer{background:var(--navy);color:#f7f4ed;padding:20px 4.8% 14px;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:16px;font-size:8px}.footer h4{font-size:9px;margin:0 0 8px}.footer p{color:#cbd2d4}.footer a:not(.logo){display:block;color:#cbd2d4;margin:5px 0}.footer input{width:100%;padding:7px;background:transparent;border:1px solid #89949a;color:white}.copyright{background:var(--navy);color:#cbd2d4;border-top:1px solid #53616a;padding:7px 4.8%;display:flex;justify-content:space-between;font-size:8px}.filters{display:flex;align-items:center;gap:10px;flex-wrap:wrap;border:1px solid var(--line);padding:10px;margin:14px 0}.filters input,.filters select{border:1px solid #ddd6cc;background:white;padding:6px;font-size:9px}.shop-layout{display:grid;grid-template-columns:130px 1fr;gap:16px}.sidebar{border-right:1px solid #eee;padding-right:13px}.sidebar h3{font:700 12px var(--serif);margin:0 0 7px}.sidebar label{display:block;font-size:9px;margin:7px 0}.occasion-hero{background:var(--green);display:grid;grid-template-columns:1fr .85fr;min-height:210px;overflow:hidden}.occasion-hero .hero-img{min-height:210px;background:var(--green)}.occasion-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.occasion-card{padding:5px;border:1px solid #eee9e1}.occasion-card img{width:100%;height:120px;object-fit:cover}.occasion-card h3{font:700 13px var(--serif);margin:7px 0 3px}.blog-feature{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;background:#fff6e8;padding:14px;align-items:center}.blog-feature img{width:100%;height:190px;object-fit:cover}.articles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px 20px}.article{display:grid;grid-template-columns:44% 1fr;gap:10px}.article img{width:100%;height:112px;object-fit:cover}.article h3{font:700 13px var(--serif);margin:4px 0}.article p{font-size:9px;color:#6f706a;margin:4px 0}.form-panel{width:min(100%,430px);margin:5px auto 15px;padding:20px 23px;border:1px solid #eee8de;background:#fff}.form-panel h1{font-size:30px}.form-panel p{font-size:9px;color:#696b65}.form-panel label,.checkout label{font-size:9px;display:block}.form-panel input,.checkout input,.checkout textarea,.checkout select{width:100%;border:1px solid #dcd6cd;padding:8px;margin:4px 0 10px;background:#fff;font-size:9px}.form-panel .btn{width:100%}.checkout{display:grid;grid-template-columns:1.45fr .8fr;gap:20px}.step{padding:12px 0;border-bottom:1px solid #e9e3da}.step h3{font:700 13px var(--serif);margin:0 0 9px}.summary{background:#fff7e9;border:1px solid #eee2d0;padding:13px;align-self:start}.summary h2{font-size:18px}.sumrow{display:flex;justify-content:space-between;gap:8px;margin:8px 0;font-size:9px}.empty{text-align:center;padding:45px 10px}.toast{position:fixed;z-index:50;bottom:18px;left:50%;transform:translateX(-50%);background:var(--navy);color:white;padding:10px 16px;display:none;box-shadow:0 4px 18px #0002;font-size:11px}
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Blooming.Co &mdash; Flowers for every feeling
+  </title>
+  <style>
+   :root{--ink:#222b2c;--muted:#70716c;--cream:#fff5e4;--pink:#f4dce0;--rose:#bc7180;--green:#b6c799;--navy:#263744;--line:#e8e2d9;--white:#fffdf9;--serif:Georgia,'Times New Roman',serif}
+*{box-sizing:border-box}body{margin:0;background:#f6f4ef;color:var(--ink);font:12px/1.45 Arial,Helvetica,sans-serif}button,input,select,textarea{font:inherit}button,a{cursor:pointer}a{color:inherit;text-decoration:none}.site{width:min(100%,1100px);margin:auto;background:white;min-height:100vh;box-shadow:0 0 18px #0000000a}.announcement{height:23px;background:var(--cream);display:flex;justify-content:center;align-items:center;font-size:9px;letter-spacing:.15px}.header{height:49px;display:flex;align-items:center;gap:28px;padding:0 4.8%;border-bottom:1px solid #efede8;background:#fff;position:sticky;top:0;z-index:20}.logo{font:700 15px var(--serif);color:#3b513d;white-space:nowrap;letter-spacing:-.4px}.logo small{display:block;font:6px Arial;letter-spacing:1.7px;text-align:center;margin-top:-1px}.logo-image{display:flex;align-items:center;flex:0 0 auto}.logo-image img{display:block;width:108px;height:54px;object-fit:contain}.footer .logo-image img{width:108px;height:54px}.header{gap:20px}.nav{display:flex;align-items:center;gap:18px;flex:1;font-size:9px}.nav a{white-space:nowrap;padding:6px 0}.nav a.active{color:#ad6270;border-bottom:1px solid #ad6270}.tools{display:flex;gap:11px;align-items:center}.tools button{border:0;background:transparent;font-size:15px;padding:1px;color:#303635}.mobile{display:none}.page{display:none}.page.active{display:block}.wrap{padding:22px 4.8% 27px}.hero{display:grid;grid-template-columns:1fr .95fr;background:var(--cream);min-height:255px;overflow:hidden}.hero-copy{padding:27px 6% 22px 9%;align-self:center}.kicker{font-size:8px;text-transform:uppercase;letter-spacing:1.2px;color:#737c69}.h1{font:700 clamp(26px,3vw,39px)/.99 var(--serif);letter-spacing:-.7px;margin:8px 0 11px}.lead{max-width:300px;color:#595b54;font-size:10px;line-height:1.6}.hero-img{position:relative;min-height:255px;background:#f0e4d1;overflow:hidden}.hero-img img{width:100%;height:100%;object-fit:contain;position:absolute;inset:0}.btn{border:1px solid var(--rose);background:var(--rose);color:white;padding:8px 13px;min-height:28px;font-size:9px;display:inline-flex;align-items:center;justify-content:center;gap:6px}.btn.outline{background:transparent;color:#333;border-color:#c6b9ad}.btn.dark{background:var(--navy);border-color:var(--navy)}.btn.small{padding:5px 8px;min-height:23px;font-size:8px}.hero-actions{display:flex;gap:7px;margin-top:15px;flex-wrap:wrap}.ticker{background:var(--pink);padding:7px 4.8%;display:flex;justify-content:space-between;gap:10px;font-size:8px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:20px 0 10px}.section-head h2{margin:0}.h2{font:700 21px/1.1 var(--serif);letter-spacing:-.3px;margin:4px 0 10px}.h3{font:700 13px/1.15 var(--serif);margin:7px 0 3px}.textlink{text-decoration:underline;text-underline-offset:2px;font-size:9px;white-space:nowrap}.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.product{border:1px solid #eee9e1;padding:5px;min-width:0;background:#fff;position:relative}.photo{height:135px;background:#f7f0e5;overflow:hidden;position:relative}.photo img{width:100%;height:100%;object-fit:cover}.heart{position:absolute;right:5px;top:5px;background:#fff;border:0;border-radius:50%;width:23px;height:23px;font-size:14px;color:#a75e6c}.product .name{font:700 11px var(--serif);margin:7px 0 2px}.muted{font-size:8px;color:#777}.product-bottom{display:flex;justify-content:space-between;align-items:center;gap:5px;margin-top:7px}.price{font-size:9px;font-weight:bold;white-space:nowrap}.add{font-size:8px;border:1px solid #d8cfc5;background:#fff;padding:5px 6px}.mini-pill{font-size:7px;border:1px solid #e7c9ce;border-radius:8px;padding:2px 6px;color:#8e5d66;display:inline-block;margin-bottom:4px}.greenband{background:var(--green);padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:14px;margin:22px 0}.greenband h2{font:700 20px var(--serif);margin:0 0 4px}.greenband p{font-size:9px;margin:0}.feature{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}.feature img{width:100%;height:180px;object-fit:cover}.footer{background:var(--navy);color:#f7f4ed;padding:20px 4.8% 14px;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:16px;font-size:8px}.footer h4{font-size:9px;margin:0 0 8px}.footer p{color:#cbd2d4}.footer a:not(.logo){display:block;color:#cbd2d4;margin:5px 0}.footer input{width:100%;padding:7px;background:transparent;border:1px solid #89949a;color:white}.copyright{background:var(--navy);color:#cbd2d4;border-top:1px solid #53616a;padding:7px 4.8%;display:flex;justify-content:space-between;font-size:8px}.filters{display:flex;align-items:center;gap:10px;flex-wrap:wrap;border:1px solid var(--line);padding:10px;margin:14px 0}.filters input,.filters select{border:1px solid #ddd6cc;background:white;padding:6px;font-size:9px}.shop-layout{display:grid;grid-template-columns:130px 1fr;gap:16px}.sidebar{border-right:1px solid #eee;padding-right:13px}.sidebar h3{font:700 12px var(--serif);margin:0 0 7px}.sidebar label{display:block;font-size:9px;margin:7px 0}.occasion-hero{background:var(--green);display:grid;grid-template-columns:1fr .85fr;min-height:210px;overflow:hidden}.occasion-hero .hero-img{min-height:210px;background:var(--green)}.occasion-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.occasion-card{padding:5px;border:1px solid #eee9e1}.occasion-card img{width:100%;height:120px;object-fit:cover}.occasion-card h3{font:700 13px var(--serif);margin:7px 0 3px}.blog-feature{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;background:#fff6e8;padding:14px;align-items:center}.blog-feature img{width:100%;height:190px;object-fit:cover}.articles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px 20px}.article{display:grid;grid-template-columns:44% 1fr;gap:10px}.article img{width:100%;height:112px;object-fit:cover}.article h3{font:700 13px var(--serif);margin:4px 0}.article p{font-size:9px;color:#6f706a;margin:4px 0}.form-panel{width:min(100%,430px);margin:5px auto 15px;padding:20px 23px;border:1px solid #eee8de;background:#fff}.form-panel h1{font-size:30px}.form-panel p{font-size:9px;color:#696b65}.form-panel label,.checkout label{font-size:9px;display:block}.form-panel input,.checkout input,.checkout textarea,.checkout select{width:100%;border:1px solid #dcd6cd;padding:8px;margin:4px 0 10px;background:#fff;font-size:9px}.form-panel .btn{width:100%}.checkout{display:grid;grid-template-columns:1.45fr .8fr;gap:20px}.step{padding:12px 0;border-bottom:1px solid #e9e3da}.step h3{font:700 13px var(--serif);margin:0 0 9px}.summary{background:#fff7e9;border:1px solid #eee2d0;padding:13px;align-self:start}.summary h2{font-size:18px}.sumrow{display:flex;justify-content:space-between;gap:8px;margin:8px 0;font-size:9px}.empty{text-align:center;padding:45px 10px}.toast{position:fixed;z-index:50;bottom:18px;left:50%;transform:translateX(-50%);background:var(--navy);color:white;padding:10px 16px;display:none;box-shadow:0 4px 18px #0002;font-size:11px}
 @media(min-width:900px){.site{margin:18px auto}.photo{height:180px}.hero,.hero-img{min-height:315px}.hero-img{min-height:315px}.wrap{padding-top:28px}.h1{font-size:42px}}
 @media(max-width:600px){.header{padding:8px 4%;height:auto;min-height:47px;gap:10px;flex-wrap:wrap}.mobile{display:block;background:none;border:0;font-size:18px}.logo{font-size:14px}.tools{margin-left:auto}.nav{display:none;order:3;flex:0 0 100%;overflow:auto;gap:15px;padding:5px 0}.nav.open{display:flex}.hero,.occasion-hero{grid-template-columns:1fr}.hero-copy{padding:23px 6%}.hero-img{min-height:165px;position:relative}.ticker{flex-wrap:wrap}.wrap{padding:18px 4%}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.photo{height:145px}.shop-layout{grid-template-columns:1fr}.sidebar{border:0;border-bottom:1px solid #eee;padding-bottom:8px}.sidebar label{display:inline-block;margin-right:9px}.occasion-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.occasion-card img{height:115px}.blog-feature,.feature,.checkout{grid-template-columns:1fr}.blog-feature img{height:160px}.articles{grid-template-columns:1fr}.article img{height:120px}.footer{grid-template-columns:repeat(2,minmax(0,1fr));padding:18px 4%}.copyright{gap:8px;flex-wrap:wrap}.greenband{align-items:flex-start;flex-direction:column}.form-panel{padding:17px}.h1{font-size:32px}}
-</style>
-</head>
-<body><div class="site">
-<div class="announcement">Bunga segar untuk momen yang berarti · Gratis kartu ucapan di setiap pesanan</div>
-<header class="header"><button class="mobile" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button><a class="logo" href="#home">✿ BLOOM<small>FLOWERS & LITTLE JOYS</small></a><nav class="nav"><a href="#home" data-nav="home">Home</a><a href="#shop" data-nav="shop">Telusuri</a><a href="#occasions" data-nav="occasions">Occasions</a><a href="#blog" data-nav="blog">Blogs</a></nav><div class="tools"><button onclick="go('shop')" aria-label="Search">⌕</button><button onclick="go('favorites')" aria-label="Favorites">♡<sup id="favCount"></sup></button><button onclick="go('login')" aria-label="Login">♙</button><button onclick="go('checkout')" aria-label="Bag">♧<sup id="cartCount"></sup></button></div></header>
-<main>
-<section class="page active" id="home"><div class="hero"><div class="hero-copy"><div class="kicker">Flowers, with feeling</div><h1 class="h1">Flowers for<br>every feeling.</h1><p class="lead">Every stem tells a story. Send a little joy, a little love, and something beautiful to someone you care about.</p><div class="hero-actions"><button class="btn" onclick="go('shop')">Shop all flowers →</button><button class="btn outline" onclick="go('occasions')">Find a bouquet</button></div></div><div class="hero-img"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=85" alt="Bouquet flowers"></div></div><div class="ticker"><span>✿ Hand-tied with love</span><span>✿ Same-day delivery in selected areas</span><span>✿ Thoughtful flowers, always</span></div><div class="wrap"><div class="section-head"><div><div class="kicker">Made to make someone smile</div><h2 class="h2">Shop all flowers</h2></div><a class="textlink" href="#shop">Shop all flowers →</a></div><div class="product-grid" id="homeProducts"></div><div class="greenband"><div><div class="kicker">A little joy goes a long way</div><h2>Good things grow here.</h2><p>Find the right flowers for every moment, big or small.</p></div><button class="btn dark" onclick="go('occasions')">Shop by occasions →</button></div><div class="section-head"><div><div class="kicker">From our journal</div><h2 class="h2">Stories in full bloom.</h2></div><a class="textlink" href="#blog">More flower stories →</a></div><div class="articles" id="homeArticles"></div></div></section>
-<section class="page" id="shop"><div class="wrap"><div class="kicker">The flower shop</div><h1 class="h1">Find your little bloom.</h1><p class="lead">Thoughtful flowers for everyday moments and the ones you'll remember forever.</p><div class="filters"><label>Search <input id="search" placeholder="Find your flowers..." oninput="renderShop()"></label><label>Sort <select id="sort" onchange="renderShop()"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></label><label>Flower type <select id="type" onchange="renderShop()"><option value="all">All flowers</option><option value="Roses">Roses</option><option value="Tulips">Tulips</option><option value="Mixed">Mixed</option><option value="Sunflowers">Sunflowers</option></select></label></div><div class="shop-layout"><aside class="sidebar"><h3>Browse by</h3><label><input type="checkbox"> Available now</label><h3>Occasions</h3><label><input type="checkbox" onchange="setOccasion(this,'Birthday')"> Birthday</label><label><input type="checkbox" onchange="setOccasion(this,'Thank you')"> Thank you</label><label><input type="checkbox" onchange="setOccasion(this,'Just because')"> Just because</label><h3>Price</h3><label><input type="radio" name="price" checked onchange="priceFilter=0;renderShop()"> All prices</label><label><input type="radio" name="price" onchange="priceFilter=100000;renderShop()"> Under Rp100k</label></aside><div><p id="resultCount" class="muted"></p><div class="product-grid" id="shopProducts"></div></div></div><div class="greenband"><div><h2>Mulai dari momenmu.</h2><p>Setiap bunga punya cerita untuk dibagikan.</p></div><button class="btn dark" onclick="go('occasions')">Explore occasions →</button></div></div></section>
-<section class="page" id="occasions"><div class="occasion-hero"><div class="hero-copy"><div class="kicker">Flowers for every chapter</div><h1 class="h1">Big moments.<br>Little gestures.</h1><p class="lead">The right flowers make every moment feel a little more special.</p><div class="hero-actions"><button class="btn" onclick="go('shop')">Find your flowers →</button></div></div><div class="hero-img"><img src="https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=900&q=85" alt="Flowers in a garden"></div></div><div class="wrap"><div style="text-align:center;margin:8px 0 17px"><div class="kicker">For every kind of moment</div><h2 class="h2">Shop by Occasions</h2><p class="muted">Flowers that say what words sometimes can't.</p></div><div class="occasion-grid" id="occasionGrid"></div><div class="greenband"><div><h2>Bukan sekadar sekuntum bunga.</h2><p>Sebuah cara kecil untuk bilang banyak hal.</p></div><button class="btn dark" onclick="go('shop')">Temukan bunga →</button></div></div></section>
-<section class="page" id="favorites"><div class="hero"><div class="hero-copy"><div class="kicker">A little love, saved</div><h1 class="h1">Your favorite blooms.</h1><p class="lead">Keep the flowers you love close, ready for the perfect moment.</p></div><div class="hero-img"><img src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=900&q=85" alt="Pink bouquet"></div></div><div class="wrap"><div class="section-head"><div><div class="kicker">Saved just for you</div><h2 class="h2">Favorit kamu</h2></div><span id="favoriteSubtitle" class="muted"></span></div><div class="product-grid" id="favoriteProducts"></div><div id="emptyFav" class="empty" style="display:none"><h2 class="h2">Belum ada bunga favorit.</h2><p class="muted">Tekan ikon hati pada bunga yang kamu suka untuk menyimpannya di sini.</p><button class="btn" onclick="go('shop')">Jelajahi bunga →</button></div><div class="greenband"><div><h2>A little space for your favorites.</h2><p>Save a bloom today, send it when the moment feels right.</p></div><button class="btn dark" onclick="go('shop')">Shop flowers →</button></div></div></section>
-<section class="page" id="blog"><div class="wrap"><div class="kicker">The Bloom journal</div><h1 class="h1">Stories in full bloom.</h1><p class="lead">Flower notes, little rituals, and thoughtful ways to make someone smile.</p><div class="blog-feature"><div><div class="kicker">Flower care · 5 min read</div><h2 class="h2">A little care.<br>A longer bloom.</h2><p class="lead">Simple ways to keep your flowers fresh and make their beauty last a little longer.</p><button class="btn" onclick="toast('Cerita lengkap segera hadir 🌷')">Read the story →</button></div><img src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=800&q=85" alt="Pink flowers closeup"></div><div class="section-head"><div><div class="kicker">Notes from the flower shop</div><h2 class="h2">More flower stories</h2></div><a class="textlink" href="#shop">Shop flowers →</a></div><div class="articles" id="blogArticles"></div></div></section>
-<section class="page" id="login"><div class="wrap"><div class="form-panel"><div class="kicker">Welcome back</div><h1 class="h1">Hello again.</h1><p>Log in to keep your favorite blooms close and make checkout a little easier.</p><form onsubmit="event.preventDefault();toast('Demo login berhasil dikirim.');"><label>Email address</label><input type="email" required placeholder="you@example.com"><label>Password</label><input type="password" required placeholder="Enter your password"><div style="text-align:right;margin:-3px 0 10px"><a class="textlink" href="#" onclick="toast('Fitur reset password demo');return false">Forgot password?</a></div><button class="btn" type="submit">Log in</button><p style="text-align:center">Don't have an account? <a href="#" class="textlink" onclick="toast('Pendaftaran demo belum diaktifkan');return false">Create an account</a></p></form></div></div></section>
-<section class="page" id="checkout"><div class="wrap"><div class="kicker">Almost there</div><h1 class="h1">One step closer to a smile.</h1><p class="lead">A few details, then we'll get your flowers on their way.</p><div class="checkout"><div><form id="checkoutForm" onsubmit="event.preventDefault();toast('Pesanan demo berhasil dibuat 🌷');cart=[];save();updateCounts();renderCheckout()"><div class="step"><h3>01 · Delivery information</h3><div style="display:grid;grid-template-columns:1fr 1fr;gap:9px"><label>First name<input required placeholder="First name"></label><label>Last name<input required placeholder="Last name"></label></div><label>Email address<input type="email" required placeholder="you@example.com"></label><label>Phone number<input required placeholder="+62"></label><label>Delivery address<input required placeholder="Street address"></label><div style="display:grid;grid-template-columns:1fr 1fr;gap:9px"><label>City<input required placeholder="City"></label><label>Postal code<input required placeholder="Postal code"></label></div><label>Delivery date<input type="date" required></label><label>Gift message<textarea rows="2" placeholder="Write a little note..."></textarea></label></div><div class="step"><h3>02 · Delivery options</h3><label><input type="radio" name="delivery" checked> Standard delivery</label><label><input type="radio" name="delivery"> Same-day delivery (selected areas)</label></div><div class="step"><h3>03 · Payment method</h3><label><input type="radio" name="pay" checked> Bank transfer / virtual account</label><label><input type="radio" name="pay"> E-wallet</label><label><input type="radio" name="pay"> Credit / debit card</label></div><button class="btn" type="submit">Place your order →</button></form></div><aside class="summary"><h2 class="h2">Your order</h2><div id="orderItems"></div><hr style="border:0;border-top:1px solid #e4d7c8"><div class="sumrow"><span>Subtotal</span><strong id="subtotal">Rp0</strong></div><div class="sumrow"><span>Delivery</span><span>Rp15.000</span></div><div class="sumrow"><strong>Total</strong><strong id="total">Rp15.000</strong></div><div class="greenband" style="display:block;margin:12px 0 0;padding:12px"><strong>A gift with meaning.</strong><p>Every bouquet is hand-tied with care.</p></div></aside></div></div></section>
-</main>
-<footer class="footer"><div><a class="logo" href="#home" style="color:white">✿ BLOOM<small>FLOWERS & LITTLE JOYS</small></a><p>Flowers for every feeling. Thoughtfully hand-tied and delivered with love.</p></div><div><h4>Explore</h4><a href="#shop">Shop all flowers</a><a href="#occasions">Shop by occasions</a><a href="#blog">Flower journal</a></div><div><h4>Need a hand?</h4><a href="#login">My account</a><a href="#checkout">Delivery & payment</a><a href="#login">Contact us</a></div><div><h4>Stay in bloom</h4><p>Little notes, flower tips, and good things.</p><form onsubmit="event.preventDefault();toast('Terima kasih sudah berlangganan!')"><input type="email" required placeholder="Your email"><button class="btn small" style="margin-top:5px">Subscribe</button></form></div></footer><div class="copyright"><span>© 2025 Bloom Flowers. Made with love.</span><span>Instagram　 Pinterest　 Terms & Privacy</span></div>
-</div><div class="toast" id="toast"></div>
+   .logo-image{font:700 15px Georgia,serif;color:#3b513d;display:block}.logo small{display:block;font:6px Arial,sans-serif;letter-spacing:1.7px;text-align:center;margin-top:2px}.footer .logo{color:#f7f4ed}.footer .logo small{color:#cbd2d4}\n</style>
+ </head>
+ <body>
+  <div class="site">
+   <div class="announcement">
+    Bunga segar untuk momen yang berarti &middot; Gratis kartu ucapan di setiap pesanan
+   </div>
+   <header class="header">
+    <button class="mobile" onclick="document.querySelector('.nav').classList.toggle('open')">
+     ☰
+    </button>
+    <a aria-label="Blooming.Co Home" class="logo logo-image" href="#home">
+     Blooming.Co<small>FLOWERS WITH FEELING</small>
+    </a>
+    <nav class="nav">
+     <a data-nav="home" href="#home">
+      Home
+     </a>
+     <a data-nav="shop" href="#shop">
+      Telusuri
+     </a>
+     <a data-nav="occasions" href="#occasions">
+      Occasions
+     </a>
+     <a data-nav="blog" href="#blog">
+      Blogs
+     </a>
+    </nav>
+    <div class="tools">
+     <button aria-label="Search" onclick="go('shop')">
+      &telrec;
+     </button>
+     <button aria-label="Favorites" onclick="go('favorites')">
+      ♡
+      <sup id="favCount">
+      </sup>
+     </button>
+     <button aria-label="Login" onclick="go('login')">
+      ♙
+     </button>
+     <button aria-label="Bag" onclick="go('checkout')">
+      ♧
+      <sup id="cartCount">
+      </sup>
+     </button>
+    </div>
+   </header>
+   <main>
+    <section class="page active" id="home">
+     <div class="hero">
+      <div class="hero-copy">
+       <div class="kicker">
+        Flowers, with feeling
+       </div>
+       <h1 class="h1">
+        Flowers for
+        <br/>
+        every feeling.
+       </h1>
+       <p class="lead">
+        Every stem tells a story. Send a little joy, a little love, and something beautiful to someone you care about.
+       </p>
+       <div class="hero-actions">
+        <button class="btn" onclick="go('shop')">
+         Shop all flowers &rarr;
+        </button>
+        <button class="btn outline" onclick="go('occasions')">
+         Find a bouquet
+        </button>
+       </div>
+      </div>
+      <div class="hero-img">
+       <img alt="Bouquet flowers" src="assets/hero-blooming.png"/>
+      </div>
+     </div>
+     <div class="ticker">
+      <span>
+       ✿ Hand-tied with love
+      </span>
+      <span>
+       ✿ Same-day delivery in selected areas
+      </span>
+      <span>
+       ✿ Thoughtful flowers, always
+      </span>
+     </div>
+     <div class="wrap">
+      <div class="section-head">
+       <div>
+        <div class="kicker">
+         Made to make someone smile
+        </div>
+        <h2 class="h2">
+         Shop all flowers
+        </h2>
+       </div>
+       <a class="textlink" href="#shop">
+        Shop all flowers &rarr;
+       </a>
+      </div>
+      <div class="product-grid" id="homeProducts">
+      </div>
+      <div class="greenband">
+       <div>
+        <div class="kicker">
+         A little joy goes a long way
+        </div>
+        <h2>
+         Good things grow here.
+        </h2>
+        <p>
+         Find the right flowers for every moment, big or small.
+        </p>
+       </div>
+       <button class="btn dark" onclick="go('occasions')">
+        Shop by occasions &rarr;
+       </button>
+      </div>
+      <div class="section-head">
+       <div>
+        <div class="kicker">
+         From our journal
+        </div>
+        <h2 class="h2">
+         Stories in full bloom.
+        </h2>
+       </div>
+       <a class="textlink" href="#blog">
+        More flower stories &rarr;
+       </a>
+      </div>
+      <div class="articles" id="homeArticles">
+      </div>
+     </div>
+    </section>
+    <section class="page" id="shop">
+     <div class="wrap">
+      <div class="kicker">
+       The flower shop
+      </div>
+      <h1 class="h1">
+       Find your little bloom.
+      </h1>
+      <p class="lead">
+       Thoughtful flowers for everyday moments and the ones you'll remember forever.
+      </p>
+      <div class="filters">
+       <label>
+        Search
+        <input id="search" oninput="renderShop()" placeholder="Find your flowers..."/>
+       </label>
+       <label>
+        Sort
+        <select id="sort" onchange="renderShop()">
+         <option value="featured">
+          Featured
+         </option>
+         <option value="low">
+          Price: low to high
+         </option>
+         <option value="high">
+          Price: high to low
+         </option>
+        </select>
+       </label>
+       <label>
+        Flower type
+        <select id="type" onchange="renderShop()">
+         <option value="all">
+          All flowers
+         </option>
+         <option value="Roses">
+          Roses
+         </option>
+         <option value="Tulips">
+          Tulips
+         </option>
+         <option value="Mixed">
+          Mixed
+         </option>
+         <option value="Sunflowers">
+          Sunflowers
+         </option>
+        </select>
+       </label>
+      </div>
+      <div class="shop-layout">
+       <aside class="sidebar">
+        <h3>
+         Browse by
+        </h3>
+        <label>
+         <input type="checkbox"/>
+         Available now
+        </label>
+        <h3>
+         Occasions
+        </h3>
+        <label>
+         <input onchange="setOccasion(this,'Birthday')" type="checkbox"/>
+         Birthday
+        </label>
+        <label>
+         <input onchange="setOccasion(this,'Thank you')" type="checkbox"/>
+         Thank you
+        </label>
+        <label>
+         <input onchange="setOccasion(this,'Just because')" type="checkbox"/>
+         Just because
+        </label>
+        <h3>
+         Price
+        </h3>
+        <label>
+         <input checked="" name="price" onchange="priceFilter=0;renderShop()" type="radio"/>
+         All prices
+        </label>
+        <label>
+         <input name="price" onchange="priceFilter=100000;renderShop()" type="radio"/>
+         Under Rp100k
+        </label>
+       </aside>
+       <div>
+        <p class="muted" id="resultCount">
+        </p>
+        <div class="product-grid" id="shopProducts">
+        </div>
+       </div>
+      </div>
+      <div class="greenband">
+       <div>
+        <h2>
+         Mulai dari momenmu.
+        </h2>
+        <p>
+         Setiap bunga punya cerita untuk dibagikan.
+        </p>
+       </div>
+       <button class="btn dark" onclick="go('occasions')">
+        Explore occasions &rarr;
+       </button>
+      </div>
+     </div>
+    </section>
+    <section class="page" id="occasions">
+     <div class="occasion-hero">
+      <div class="hero-copy">
+       <div class="kicker">
+        Flowers for every chapter
+       </div>
+       <h1 class="h1">
+        Big moments.
+        <br/>
+        Little gestures.
+       </h1>
+       <p class="lead">
+        The right flowers make every moment feel a little more special.
+       </p>
+       <div class="hero-actions">
+        <button class="btn" onclick="go('shop')">
+         Find your flowers &rarr;
+        </button>
+       </div>
+      </div>
+      <div class="hero-img">
+       <img alt="Flowers in a garden" src="https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&amp;fit=crop&amp;w=900&amp;q=85"/>
+      </div>
+     </div>
+     <div class="wrap">
+      <div style="text-align:center;margin:8px 0 17px">
+       <div class="kicker">
+        For every kind of moment
+       </div>
+       <h2 class="h2">
+        Shop by Occasions
+       </h2>
+       <p class="muted">
+        Flowers that say what words sometimes can't.
+       </p>
+      </div>
+      <div class="occasion-grid" id="occasionGrid">
+      </div>
+      <div class="greenband">
+       <div>
+        <h2>
+         Bukan sekadar sekuntum bunga.
+        </h2>
+        <p>
+         Sebuah cara kecil untuk bilang banyak hal.
+        </p>
+       </div>
+       <button class="btn dark" onclick="go('shop')">
+        Temukan bunga &rarr;
+       </button>
+      </div>
+     </div>
+    </section>
+    <section class="page" id="favorites">
+     <div class="hero">
+      <div class="hero-copy">
+       <div class="kicker">
+        A little love, saved
+       </div>
+       <h1 class="h1">
+        Your favorite blooms.
+       </h1>
+       <p class="lead">
+        Keep the flowers you love close, ready for the perfect moment.
+       </p>
+      </div>
+      <div class="hero-img">
+       <img alt="Pink bouquet" src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&amp;fit=crop&amp;w=900&amp;q=85"/>
+      </div>
+     </div>
+     <div class="wrap">
+      <div class="section-head">
+       <div>
+        <div class="kicker">
+         Saved just for you
+        </div>
+        <h2 class="h2">
+         Favorit kamu
+        </h2>
+       </div>
+       <span class="muted" id="favoriteSubtitle">
+       </span>
+      </div>
+      <div class="product-grid" id="favoriteProducts">
+      </div>
+      <div class="empty" id="emptyFav" style="display:none">
+       <h2 class="h2">
+        Belum ada bunga favorit.
+       </h2>
+       <p class="muted">
+        Tekan ikon hati pada bunga yang kamu suka untuk menyimpannya di sini.
+       </p>
+       <button class="btn" onclick="go('shop')">
+        Jelajahi bunga &rarr;
+       </button>
+      </div>
+      <div class="greenband">
+       <div>
+        <h2>
+         A little space for your favorites.
+        </h2>
+        <p>
+         Save a bloom today, send it when the moment feels right.
+        </p>
+       </div>
+       <button class="btn dark" onclick="go('shop')">
+        Shop flowers &rarr;
+       </button>
+      </div>
+     </div>
+    </section>
+    <section class="page" id="blog">
+     <div class="wrap">
+      <div class="kicker">
+       The Bloom journal
+      </div>
+      <h1 class="h1">
+       Stories in full bloom.
+      </h1>
+      <p class="lead">
+       Flower notes, little rituals, and thoughtful ways to make someone smile.
+      </p>
+      <div class="blog-feature">
+       <div>
+        <div class="kicker">
+         Flower care &middot; 5 min read
+        </div>
+        <h2 class="h2">
+         A little care.
+         <br/>
+         A longer bloom.
+        </h2>
+        <p class="lead">
+         Simple ways to keep your flowers fresh and make their beauty last a little longer.
+        </p>
+        <button class="btn" onclick="toast('Cerita lengkap segera hadir 🌷')">
+         Read the story &rarr;
+        </button>
+       </div>
+       <img alt="Pink flowers closeup" src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&amp;fit=crop&amp;w=800&amp;q=85"/>
+      </div>
+      <div class="section-head">
+       <div>
+        <div class="kicker">
+         Notes from the flower shop
+        </div>
+        <h2 class="h2">
+         More flower stories
+        </h2>
+       </div>
+       <a class="textlink" href="#shop">
+        Shop flowers &rarr;
+       </a>
+      </div>
+      <div class="articles" id="blogArticles">
+      </div>
+     </div>
+    </section>
+    <section class="page" id="login">
+     <div class="wrap">
+      <div class="form-panel">
+       <div class="kicker">
+        Welcome back
+       </div>
+       <h1 class="h1">
+        Hello again.
+       </h1>
+       <p>
+        Log in to keep your favorite blooms close and make checkout a little easier.
+       </p>
+       <form onsubmit="event.preventDefault();toast('Demo login berhasil dikirim.');">
+        <label>
+         Email address
+        </label>
+        <input placeholder="you@example.com" required="" type="email"/>
+        <label>
+         Password
+        </label>
+        <input placeholder="Enter your password" required="" type="password"/>
+        <div style="text-align:right;margin:-3px 0 10px">
+         <a class="textlink" href="#" onclick="toast('Fitur reset password demo');return false">
+          Forgot password?
+         </a>
+        </div>
+        <button class="btn" type="submit">
+         Log in
+        </button>
+        <p style="text-align:center">
+         Don't have an account?
+         <a class="textlink" href="#" onclick="toast('Pendaftaran demo belum diaktifkan');return false">
+          Create an account
+         </a>
+        </p>
+       </form>
+      </div>
+     </div>
+    </section>
+    <section class="page" id="checkout">
+     <div class="wrap">
+      <div class="kicker">
+       Almost there
+      </div>
+      <h1 class="h1">
+       One step closer to a smile.
+      </h1>
+      <p class="lead">
+       A few details, then we'll get your flowers on their way.
+      </p>
+      <div class="checkout">
+       <div>
+        <form id="checkoutForm" onsubmit="event.preventDefault();toast('Pesanan demo berhasil dibuat 🌷');cart=[];save();updateCounts();renderCheckout()">
+         <div class="step">
+          <h3>
+           01 &middot; Delivery information
+          </h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px">
+           <label>
+            First name
+            <input placeholder="First name" required=""/>
+           </label>
+           <label>
+            Last name
+            <input placeholder="Last name" required=""/>
+           </label>
+          </div>
+          <label>
+           Email address
+           <input placeholder="you@example.com" required="" type="email"/>
+          </label>
+          <label>
+           Phone number
+           <input placeholder="+62" required=""/>
+          </label>
+          <label>
+           Delivery address
+           <input placeholder="Street address" required=""/>
+          </label>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px">
+           <label>
+            City
+            <input placeholder="City" required=""/>
+           </label>
+           <label>
+            Postal code
+            <input placeholder="Postal code" required=""/>
+           </label>
+          </div>
+          <label>
+           Delivery date
+           <input required="" type="date"/>
+          </label>
+          <label>
+           Gift message
+           <textarea placeholder="Write a little note..." rows="2"></textarea>
+          </label>
+         </div>
+         <div class="step">
+          <h3>
+           02 &middot; Delivery options
+          </h3>
+          <label>
+           <input checked="" name="delivery" type="radio"/>
+           Standard delivery
+          </label>
+          <label>
+           <input name="delivery" type="radio"/>
+           Same-day delivery (selected areas)
+          </label>
+         </div>
+         <div class="step">
+          <h3>
+           03 &middot; Payment method
+          </h3>
+          <label>
+           <input checked="" name="pay" type="radio"/>
+           Bank transfer / virtual account
+          </label>
+          <label>
+           <input name="pay" type="radio"/>
+           E-wallet
+          </label>
+          <label>
+           <input name="pay" type="radio"/>
+           Credit / debit card
+          </label>
+         </div>
+         <button class="btn" type="submit">
+          Place your order &rarr;
+         </button>
+        </form>
+       </div>
+       <aside class="summary">
+        <h2 class="h2">
+         Your order
+        </h2>
+        <div id="orderItems">
+        </div>
+        <hr style="border:0;border-top:1px solid #e4d7c8"/>
+        <div class="sumrow">
+         <span>
+          Subtotal
+         </span>
+         <strong id="subtotal">
+          Rp0
+         </strong>
+        </div>
+        <div class="sumrow">
+         <span>
+          Delivery
+         </span>
+         <span>
+          Rp15.000
+         </span>
+        </div>
+        <div class="sumrow">
+         <strong>
+          Total
+         </strong>
+         <strong id="total">
+          Rp15.000
+         </strong>
+        </div>
+        <div class="greenband" style="display:block;margin:12px 0 0;padding:12px">
+         <strong>
+          A gift with meaning.
+         </strong>
+         <p>
+          Every bouquet is hand-tied with care.
+         </p>
+        </div>
+       </aside>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="footer">
+    <div>
+     <a aria-label="Blooming.Co Home" class="logo logo-image" href="#home">
+      <img alt="Logo blooming.Co" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAQFBQkGCQkJCQkKCAkICgsLCgoLCwwKCwoLCgwMDAwNDQwMDAwMDw4PDAwNDw8PDw0OERERDhEQEBETERMREQ0BBAQECAYIBwgIBwgGCAYICAgHBwgICQcHBwcHCQoJCAgICAkKCQgIBggICQkJCgoJCQoICQgKCgoKCg4QDg4Od//CABEIBOYE5gMBIgACEQEDEQH/xAEOAAEBAQEBAQEBAAAAAAAAAAAAAQYFBAMCBwEBAQEBAQEAAAAAAAAAAAAAAAMCAQQFEAABAQQGBQcKBgAFBQEAAAABAgADBBESITFBUXEQIDJhgQUiUJGhsdEGExRAQlJiweHwMDNgcoLxI0NTcKCAkJKisuIRAAECAgUHCQYFBAIBBQAAAAECAwAEBRARITESMDJBUXFyEyAiM2BhgbHBQlJikaHRI0BDcIIUUOHxFVOSNJCywPASAAECAwYHAQACAwEBAAAAAAEAESExURBBYXGBkSAwobHB0fBgQOFQcPHAkBMBAAEBBAoCAwEBAQAAAAAAAREAITFBURAgMEBQYXGBkaGx8GDB0eHxcP/aAAwDAQACEAMRAAAC344AAAAAAAAAAEKAAQpCgAAJRKCCkKAAgoBBQAAEFBAoAAAAAAAEoSgCKCUAlQoAAAAAAAABCglQoBCgAAAAARSUAAAEoAlABgN/gDfgAAAAAAAASgAQsoAAAAAEKAAAAAAQoAAAAABCgAAASgAACUAACUAASiUEoJQCUACUlAAAAAACUAABCgAAEKCUAAAAAAGA3+AN+ACUJQASwoAABCgAAAAJSKACUAAEKQUAAAABBQAlAQoAAAICgAAAAEKCVCgSgACUAAEoAAAAAAAAEKABLCgAAlAAAAAAAABgN/gDfgAAAlAACUAEoASgCUAAABCgEKlBCkKAQpCkKAAAlAAAAAAACUAAASgAAAQoAAAEoAAAAAlgoAAAAAAEoAAAAAAAAAEKABgN/gOt+TipRFAAAAAAAAJZQAAAAABKEsKAABKAAACCgAlAAAAgqUASgAAAAAAAlJQAAAAJQlAAJUKAAAAAlACUAAlAAAAAAAAAAABgN/gDfkLKAAAEUAAAAAEKAlJQAEKAAAAAABKAAAAJQAAASglAAAAAAAAABCgAAAAJRKAAABCgSgQoACUAAAAAAAAAEKQUAEoJQBgN/gDfgAAAAAAAAAAAlAABKAEoAAAAAlAAAAAAQoJQAIKAAAAlAACCgAASgQpCgAAAAAILKAAABCgAAAAAAJQAQoAEoAAASgBgN/gDfUABCgSiUAAABCgAAAJQAAAACWUlAAQoAACUAASgAAAlAACUAAEKAAAABKAAAAACUAAAEKAlEolAAQoEoELLCgAJSUAAJQASgABgN/gDfgAAAAAAAASgAlAAAAAJQSgAAABKCUAASgAABKAAABCkKAAAAAAlAAAABCgSgACUAAJQAAAEKlABCgJQABKACUAAAAigABgN/gDfgAEKAAAQqUAAASiUCUlQoAAAAAAAAAAAAAAAEoAAAEKAAABKAAAAAEoAAlAAAAAAQqCgAEKAAAlAJQAAAASgAAAAAABgN/gDfpQlAACUAAAAAEKAQoAAABCpQAAABKAABCygAAAAACUJQJQAQoAAAAAAAAAAAAAAAAEUAAAAAAAAAAAlAAAAACUAAAGA3+AN+AACUAAAAAAAAAJZQCUAAAAAAAAEoAAAlCKAAAAAABCygAAACUAAEoAAAAAAAAAAAEKACUAAEoAlAAACUAEoEKlAAAAGA3+AN+AAAAQpCgASgAAABKAAJQSgAQoAAEUAAAAAARQAAACVCygAAQoAAABCgAAAAAAAJRFJQEKABKJQEKAABKAAAAAAAAAAAJQYDf4A34AABCgJQlABCgAAAAAAAASgAAAAAAAAAAAlJQAAAAAEKACUAAABBQAAASwoAAAAJUKAAABKEoAAAAAJQAAAABLCygAABgN/gOt+OAAABCgAAAAAAAAAlAAlAAAAEoAAAAlQoBCgAAAAAAAJRKACUAJQCWUAAAAASgCUAAAJQAAAAAASgAAQUAAEoSgQoABCgYDf4DrfjgABKAAAABCgAAAAAAllCUAEKlABCglAAAABKAAAEolAACUAAJZQAAAAAAQoAAAACUAAAAAAAAAAEKAAABLCgAAAAASgBgN/gOt+OAJUKAAACUEsKABKJQAAAAAAJQCUAAACCgAAAIKCUAAAAAAAAAAAAAABCgAlAAAAQpCgAAAEKAACKACUSwoEoAEKCUABCgAYDf4A34AABCgAIKAAgoBCgAAAAAEKAAAQsoAAAEKlJQILKCUEKAAQpAoAAlAAlAAAAAAAAACUlAQoABCkKCUAABCgAAAAAlAAAAQoAGA3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oAAEKBLCpQCUAABCgSwoABCgJQAAAAAAlAJQYDf4A34AAABCkFAAAAAAAAABKEoAAEKAAAAAAlAACUAlABKEoAAAlAAAAAAlAAJQAEKAAAAAAlAABBQAASgBKAAJQAAAllAAJQAYDf4A34AAAAAAAAABCgSgAAAAABLCpQAAlCUlQqUAAAJQAAAAAAlAACUlAAAAAACUAAAAAAAABCgAAAAAAJQAAAAAAAAQoEoAYDf4DrfjiUJQAlAAAAAAAAAlAAEoAAAASgABKAAAAACUAAlAlAEoAAAlAAAAAlAEsKAAAAAAACUAEoAAAAAlAAAAAQoAAAABCygBgN/gDfgAAAAAAEKAAAAlAAABBQAAlAAABAoAAABCgAAAigCUABBQAASiUAAAAACUAELKJQAAAAIKAABKAAAAACUAAJQBKCUASgQuA3+A638rgAAlAAAABCgAAJQAgsoJQQoAABCgAASglAAAAAAAJQAEFABKAAAJQAlAAACUAEoJQACUAAAABCgAAAAllAAJQSgAAAAAABgN/gDfgAlBFAAAAAAIsKAAAAAAQoAAAEoSglAAAEoAAAAAAAJQlJUKBLCgAAAAJQAlAEoAAEKAACUAAAAAAAJQlAAAAAAAAAQoEoYDf4A34AAAAABCgAAAEKlJUFCVCgAEKCWUAigAAAAAAlAEoAEKAAABKEoAJQAAAAAAAAAAAlAAAAJQAAASgAAACUAAAJQAAAlAABgN/gDfsAN+wDrfsA438wI37ADfzAjfXADfXADfzAjfXADfsAN8wI37ADfzAjfzAjfzAjfsAN+wA37ADfsAN+wA38wI31wA31wA31wA38wI31wA37ADfzAjfzAjfzAjfsAN9cA637AON9cAN+wA37ADfzAjfsAN+wA37AOt+wDjfsAN/MCN+wDrfsA437ADfsAN/MCN+wA38wI38wI37ADfMCN+wA37ADfsAN+wA37AOt+wDjfMCN+wA3zAjfXADfsAN9cAN9cAN+wA31wA37ADfXADfsAN/MCN+wA3zAjfXADfXADfzAjfYEP/2gAMAwEAAhADEQAAIQgggggggggghgghhgggikjhggjghogghonggggggggkkgsigpggggggggghgpghggggggmogggkgogggggggggggkghkggggghgggggghgggggghggggkgggoggiggkokigogioggggggogghggghgogggggggggooglggghgggggisgigghhogggghogohggggvggggghgpgkggoggkgggggggghgglgggogggggggggggggoggogkgkgoggghghihhghhhgggigggggggigggkggghggggkgggggrgggggggkggggggggghgggBimggggggggqggggggklgggkgggjggogggjigkgggggggioggggiiggpgggggigiggogggggggggggghkgggmggggghgioghgggggggkggggogggkiggggggggghgggggikggghgkhggiggggggggghhogkiggggggggggggggoggkgkgggggoggggghgogjggggiggjgggkhhggggggjkggghgggggggighggkgggkggoghgkoggghggggigggggqoghgggiggkgggiggigghgggggkgggggiggghgikoghgkhlggioggogkggggggggggggkgigggggokggggkiggkgggkggghhggggggigggghgkggoggoggghighgiggkgiggggsggggghggghigggkoipggggggggggggggggkggghggggkgggggkggoggggghjgghgggigoggggkggggggggiiggiggggghghgggghiggggkgghkggggggooighgggggggggggggggggmgggggggggggogggggogggggggogggggggggqgoggggggggkgggosgggggghkggggoggkggggggggggghggoggkgogggogkhiggggggggghhggkggggkggokghgggmggggggmggggpkgghgggghggggggggimohggkohgggkgggggggggggogggghgiighgggggggggkgggggggggggioggggghggoggghoggglgggggpggggkkgggggiggggglkggggAggghggggggggggogiggggkggggpghggggggggikgigigqgggggkgogggoggggggkgghoggkkhgghggAggkgggghgggggggqighighgoggggkgggkoggoggqgggggghgggggigggggggggghgggglggggggkggAgpggggolggkoggggggigogggjggggjgogggggggggggggghggoggghhgggghgggsgilgkghgoghgggggghggjggjghgggggghggghkggghiojkihgghhsggogigggggggggiohgghhgogghggggggoggghggghghgigAhhgghooghhggggggokhggjnE+4sggigggghhgggghhgghggkglgggghggogggggggiguggggAggogggihhigggggigggghkgggghVniqpSAgghggggjghggiggggggghgggiggghggggggggggggggggoggsggoghqgoggokggoghghgoihGtPPruQigglghggihhoggkgghggigghhggggghkogkgggggggggggggigohkmggimggoggkhhqggggsAMOFPiAgggggkkgklgggoqgiggggsggkhggggigsggggggkggggkgoggggogggggighsggkgogglgkvAAIAHgAgmgggggeRAggghn8CQgggkgkggggsgggggiggqgggggggggggghhggggggggoqggqggoggioVICANAAogggggr3LiyggdDkgoghoggghggggoggghroioggpggggggggiggggghgkgggkgggghogggraUgAACAghgkghjaKBAru1msiQhggkmggggggggoggggiggggggggghghghiogpggggkgooggggoiggsZggAAoAggggigkjRNLSAnuhaUsgggoiggkgkghggggggoggogggghsgggggiglggggoiggigopggogoCgiFkRAghihiqjkoakpjLkl0glhgpgghiqhgggoogkggkggkgggoggggggooggghggkggigvgiggklgMhnKDEa0aJnqDuxXQT23pqCggghpgogqhgggggogggoggggghggggiggggohgggggkkqgkhqmggkgghBnPLOwA3otuCkmkt2xucMRhggphgokgkggiggkgiggggoggggggAhgggoggggggkgggggihggiqgillPtOvPNnvLFvgnInvnpx0ggggggggkigjoggkgggggoigogggggiAgggggoogggggggggggggggohskhanvvvsv7utvQllmvvvoA4ggggggggggqgksglgghggggggghgggogggggggggggggkgoogoihhggghgfHPf8A+J40lUacH2b7b7rsIIYYIYYZI4Ia6JKYIIIoIIIKIJIIIIIII4IIIIIIIKIJIIIIIIIIJIKYIK0Hz3sIBoIJiYoZJE+775aoIJoIZKKJYoKIIIIYoIJKoooIIIIKIIIIIIKYIoIIIIIoIKIIqaKIJIIIYlfzSNJUJoxxMXZoLL1oIJcIIIIIIJYaaIIIIIJoIIIIIIIoIIIIIoKIIIIKIIJYIIKIIILJIpIIIKIKn7yoJypkQQceO01MqKoIKmtIKIIoIJIJYIKIIYIIIpIIIKIIJIIAIIIIIIIIIIIIIIIKZoIoJIoIIIKVBesJF48e/ccNW66FAk4PoEIIoZJKIIIYJIIIKIIIJII5IIIIoIAYIIIIJoIIIIIIKIIIII6IIILYILUpawFTf+8co5tnBTxnTaZ48IIIJIKIZIIIJILYoIIIIJYaYKIIKBIIIIIIoIIIIIIIIIIIIII7YoKILAQB2841/wD/AEw5uzQUxuZiggogggggpoghhkgggggsgggghghgggggihggggkgggohigkgigghigggqgkNgVc6kSTLCyyWnuBFl3hjugoiggggoggggggkohgggggggggiggggghggggoghihggigohogkoghgijcygFSgvdws3uPRUBhrPvoiggsggmgkkgoriohgqggoigiogggggAgggggpgggggggjggggggggpgogqdnmBjgnYvg0PfYK8nqgqkLwgggggogiggohikogggoghgggogggEkggggphkgkggghghighiggpggikOt4EIwHQjA4XZLBSvxhnpgiggoggoglggghggggggigkggggghgAgghkggggggkgkigkqhogkgimhhkk7gFgtehCHlUv9QqvgkuuShgggpggggoggilkggomsghgoghggghgghgggkigkologggggqggggpoggsbgENNB6UxggsYIh1hrvEgoggggggkkgghhgkokggggkggghgogpkgggggkgggggggggggggggijggigq1gAIGqafgggmOspjjw0kgggghgqkgvgggggggkkgggogggggggggkgoogogigggggoggloomospggkioAkokggllTla4gjtARkkggloghgogkgrkogoqgkkggpiggghggggggggggggkgggogggggmgoiikhggkpXwspg9IzVYoi5oggghikijigqgggiggoogkhgggiggghgiggkgggggqgogggghgiiggoihgggpggiggo5YWOHUlrCacwgnigskggkgkhjggggogggigoggggogoggghggigggoghigggggoggighgggggghgggiggggkogggioggigigggkgihigiiggoggggghggggogigsggkkgiggggggggggghggkhh6kgoosggoggggggggojmggigiggigigglshgjggggggggkgkgggihgggggggggkgiigggggghYmQplogQogogihgohgggggklfiggogpjggkoohtAKCCgokggiqgggkkgoggggggAghsgggokggqgoggdJUwkrWArggigitgojjjmggmJxApiggkz6gggkpvQTQ1hiiggggigggggggggggAgggkogohjqogikmbEUijWXMbc504SqW0RVTb11G9Zqu1jUIYkAAswW7c0vFjR4gkgogghgkghghgggggkhggogggggggilShDVq1TXGFavmDGZO4pHQtDgcFbg+kxzDRR4gIgwgiiazbwAggggggggjggigggogggiggigggkshiiRFw2f2XG8l2XwnW2g6hh0PWoXjRkWROmCzcxb3XPhKsI5iM4ggkigggghgogggggggigglghkghgggnb40YnoZW8iTMpbLO0MonxHTlZvhqazJbtsrQCOflkmqimWnggggiggghgihgggggggogoggggggoghggtf+rlbQ1yWdsfIeJVh1ms7tTocV1UW8XiEFk8hzfZ0opeohgggghsgkggggggggggggugggghgggggghihggggggohgoggglggokpgglgggglWmPAZiggoggggggoohghggggggghggggggkgghkoogkggkgggggkgggkggghgpgggghkiggiighihgk5bWcgopggioggggggggigoggkgpgggggAghggghlggoghghogggpighgigiggggigogggggggggggogggghmogggggghgggkpkgohhggkoikgggggggoggigggmoiggggggihgkgggggiggkoggglgghgggggggogggghgggggiggkggggoggggoggkggggglgggpoggggggggggggoihghgggggggokgggggglghggggoggigggqgggigigggggoggggqigggghigggghgimggggohggqgggggggogggggggghggogogggggqggghggoggkggggggiggglhggkgkqggoggggggkkggoggggghgggggghggoggoggglggggkiggggggggggghgoggggmggggggggoghkggkoiqggoggAgggggggggsgghgihokggsgkggggggggglgoggggoggilgohggggogggogioggggoggoggggigggggogggggggigghkggggggkggsggoggkqggggghggggggghggggkiggggkgggkgihgghgigggghgggggggggggggioggggggggkiigoghgkggkgggggggglogggggggggkgghgghggggggpgghigggghoghggilgggqgggkogigiggggiggggggigggggsgpgkgggggggggghggghgggggoiggggggigghgiigggkgoolgghgIggkgggiggggggggggggigggsggggiggggggiqggiggghggggogigggkggokgggkgggggghgggggggggoghgkpggggkggogghkhggggggkgggigggghgghoglgigggggggggighggggggkiggggkgggggqggggkgggqggggiglggggggkkgogghggigggkgggkgghghgggoghgggkgghgligogghglgghgiggggggigoggggghhogggggggggkkgghggggggiggigogkkgggogggggiggoghggggggigghoggkgkggogggqggogggggggggggghgkggggggliggiipigggiggggggiggioggggggogggggggghgggggggigggggggghgkggAoogoggggggggiggkggggkggkgggggiggoigkgggoggggiglggggggggogkgggggogggghggggghkggggggggghggggiggghoggogggngggghggggsgoghoggkogggggighkoggggjgggkgggggiggigkigkhgEggigggghgggigjkihggghgggkigggggggoghogkgggogogggogkiggogggghgggggqggokggggggggggomggggggtgggggghggggkkigggkgggggggiipglgggggigigkgghgggogggggggoogggggggghgkggggggghgggghipopgghgqgsggggggigkghggggkkgigggggggggggiggggogggkggggogggogggogogggAkgkookogsgkkkgggggkoookogkkkgoAoggkgggAgkgAggkgkkgsgggggAsgsogoogogogkgsookov/2gAMAwEAAhADEQAAEAggogghggkghgihhgggisjlggjghogghovgkggkgogkkksjgpggggiggggjgpgjggggogmohggshqgqgggggglggkghkggiggnlggAgghogggoghkhigkkggoigjgikokigogipgohhggqgjhgghhgogigggmIgssqAFgihlgigigisgqggjBogggihogohhlgkvgqggghgpgsggoigkhggggggIBkAlgAgsAiggkAgooggggooAomEgkgoiAghghijBghjhgpgiiggkgggihkgkggghggggEggggALogiogAgkAggggAgAAhgigJimkggKgoggqogAgggkliAqkiAgjggpgggrigtiggigoAioggghiiggpgAgggigigAIggAgggggABAghkghAmiigogBgioAhgggiAggkggigooggkiIAAggiggghgggggjkgAihgEhgAigggAgAgoAhhogkigigikgEgkohgggokAkgkggpoBoggogghhogjhAgECghjgAgkhhgAAogArkAoghAAggggCCAjggvgggkggqopglogoghggAgigggggqoghkggiggkgggiAACgghggCgkkggkgoimAghgikIBhgEhlggmoggogkggghggigggogkgiAgggBoEAgggkiggmggikkggHBhggiggiggkgpilgIohkoggChiihgiggEICgggisggigkhmgghigggkoCpgAgAggggggAgggggkggghAgACmmkghgkggphgAggljgAhgggCgogAgAEgghoAAgqiiggiggggghghgggghiggggkgghkggggggooighkgggggACAggAiggggmggggoggAgggIgggggooAkigggoghgogpAggqgIgAgoggAAkgggosjiCggghkggggoiEEkACAggggggAhggoggkgoiEAogktigAigAggggllggkoggikggokghgggnggggggmggggpkgghgiAgBAgAgggIoimohggkohgggkggoAgiggAAgugggghgiuohgggggggggkgggggggggogioAkkgghgosgAgBogggFgigoAJggggkkgggiArkgAggFlggggAggghgAkgggogggoAiAhAgkgAEgpghhggqggggiEgioCgqglAAgkAqgoAIhgggAgmjEhIAAlkpgAhkgAhgkgogghAgggAggKCABiABgogkgiGgkIksggogoqgggggklggggAiggAlhggAggBgkggFoBEIggkggAgpgiAiolggkogChAhBCgoigAjAgkgjgogBgggAhkAgggggpgkoghghhgggihsEgsgilgEgBgoghgAAggkhggjggjgpggggAAhAgghkggABioikihhAhhsgBKCigggiGgAggHohgohhkokghggggggoggghggghghkigAhhoAhooghBgkggghokDCFgxCQMMAhigggghhgggApBgghgikgligAABggohgAhggojkughhgAgookAgjhBigggggigggghkAggghuOcOAKQAgjgAAgjkhAgigggAgogBgggCAgglCAgggAAggAAAggiooggsgpsghqgogAIkggoghghgIilpamrBGCigglghkgihhpggkgglgACkgBBggAgiBkIgEAAgoiggIgghAiigohkmggjmgAIkgkhhqgAAmoKoqluPigAghAkkqklhigouCiAgAAsiAkhggggihMhAggkhkgigAEgsgggkogggggihBMAAkgoAgFgEkKioviBggmgggigP4RgsAhlVggoAAkgEgAggsgggggCggqhAgikAggggAghhggEhgoEgIKAgKggohAjnaimupvooggAggtthQjphmFWAoghoAggBggoAoAggjroCIAgJsAggkggligoggABokgAAkgAgAhIAggmV0HqrtgghgkoBmEqGp6DnJJyAhggkGAggAAgAgoggAgigAgAgggghhkpghioBpgggskgoIgkAAoiAojWOGkgJrBgogiglILskmZQDPA0MgAgoCBgkgEABigggggoggpggggtsggggkiglggggICgAiAIJgkoglMMClF9iohjnLoPhuiGbFmCOkgFBAJgAhiKlACAIoCEgAEAAEggiogigkghIoAAgpkhkggigvgCAAEHjDLGqmhffMxF1eqIT6GEcKuqhgABJgIAKBgAAACogggogAAgghgoggigggCohgAggokkqgshKGAAkggNLGgpvSBWHGGrKCNBYhi6oBhghJBgIkgEAAiAgEgiggggogggAqAEhogAogiBgApMhogoAihggCqgmllMChOsuJOkqEAHqGFPINUkgghAgAgEiAjIkkEgggoAICgMAIgggCChgAgsooAAgghggApAkAgAAohskkXIDDADEQEPIg6MKHOMAU4gggggiggggKAEMgFggFgAgEBDABghgqkhBpmgkggiAggkgoIIoihJEgAjqTvv7SXLCV9hpTLU9FPHHgghhAhhpkjgJLIEJAkgmgAAgJjEkgggggjjAlgggggogkggAAghggkAJkphS+s5eGY0mrKkzHpm7PPC4ggGghkooFCAIAAAhCgIkKiiiAgAAoogiBigJjimgghiCioIgiNoIhEgAhoVYijWLJmnCfQ5MjtPkAFJwkgAAAgFFJIAEIAAGAIAAAggigggggmhoBIggooglgggogggukCkgggMggdHnPI7hDJ6O3NA3zgEEGFK0pIgCgAEAFAAoghAgoCkgggoBgkogAgggikkgggkkggkgLmACgEiAAAAjXlVePpojdyNRYbNFGHjAXKgoCLEEIAABEkhAgopghGgDlAEAKigBgggggmkggggggogkghDIAAgtkgjYFEntowgC5sbl0hnJSDJHJgggAkgIBEAggkgtiggAggFhtgIgioEgggggCgmgkgggggICAAAjNiAohCKqmxDD6mirahbez2/wCWQgzSIgIAIKSAKYZIIIIILQQAAAwgYAIIIIoYgIIJKIICAYohAAgAIQgAAKoIMC9eSrJ+ym8hqB01dZYAQEsCoggAAKIJIAIIJLIYACAIAIIAgiIoIIKYIIYKIIQiQAAgKCSABKACQAixHS7/AOCtH2FCQBtbmGfEkgDCC+CAYkQQIisIgECqACiOCKgiCSGICCiCGCmAQQiCCAMAACCEAAAkiiAY4gmUsGAj+XkKE2U6OsosplCAAQQAgAIEQiGKSiAACiCMIAAiCKASSiiiCmGYASiKEEAkYgGqCgkACIRIxeOLc0GQ/deDSi6D4kcRCKAAoAAgAcAAAeCiCCACIASCAAAGGACGCmSCCCCCCSCSKCSoUgCSCaaEGS/c2UEFNf01k2wUtHvoUqSKGAAAkAIAAgASIWSCCoYwAMAgAGQCCGCCGCCCSKCSyWgACCCqqAEQCkiCCyU+SmiH/O2CSgKulo4Q2SCiAAAAAAQQgAEGAQgSACCCQAAAGkiimWCCCCCSACCGCAASCCAACCCKOCKKCOMeCiITpPeCW8i8YQyhSSACAAEAqSA+IgAACAAQQCAIiGCgCCiCCCSCigCgAKSyCCAgCCWggYgykAAQK+UYgQwAcSMPd8sUEmGSSgAUgAGAigQAsQgEgoCQaACkKCCimCCCCSCCAOCgSSCwAiECCCCYAoKIUGGCwEHy0o5kbcoQEF8AOCCGISIMICqAIIIAAgggSGCCAKCSCGAaKCSCCCSCqAiACCCECKKSAiIECCgkACKCCVCZe+eyMnDT1CAeKCySAAQAQEOCACKgAACKGiUAAAiCiCCCGGAKAACiAGKCCCCCiCKOCGCCCCCCGgCCKCCCCSiICAKiCAKCKiAAQAKGIAKKGCgCACCAGQACEiAKCyCCSQCKCiAACACCCGIGSCSGFqaCiiyCCiCCCAiCSiiaaCCOCKCCqAKCCW6GCOgCCwAIAAYAQgAAIEACCKCCCCCSCKISCCICC2ETqkemACiCiCKGCiGGCCSC2iEACCiCmOCCWiiu1OgBACiSCAKqCAAwQCgAACACACCGyCCEgSCiqCmCXWJxmE4IquMiOIU+KmKOGaGa4nl6yKQWRFoACqYQSAYtQKKKCKCAIACACCAACQIoCCCCSgCimOqqgKWLy/BG2gA4qur98U4GinmLwigdXaX7MjNLqQbm1gUOReRisJ3wSSgAgGQSCEAOCIiCKSGCAyCCCCACCKTAM3DKSNhXU7RpjRDaxiXiotV+bceX0F99O6A1deuCaZ4d1XqAIACAAgIOAIqCCCiCCGOACKCCCQyGOf6qNczCI+1pGCEfxRM9UHPm9M43YalpSfXavkWIteV98vqgwiAA0IAAAAEAiACCiCCCKCCWAGSCGCCCaNS22Qkh73wcHypFJJEWLoY9Ic8Ce/tEVqmqfP4nxt/5uyWUCCCAKAAAGCKECCCCCCKmCiCACCSCiiGCSpm7uj3T2sOWW+DJmctnDZUU8ydtsDZQlAsWjylZ01STc4iGSAAAEyQQCCCCCSCCCCCC6ECCCGCiCCCCGKGMCCCCQiGCiqSCWCCiQmCAWCgQAoOR8umqCiiyCCKCSimECGAAACCCCEIgCCGGSCCEwiiCWCCaCCACKSACCSCGCECmCCCiGSKCSIeCGKGCxgL+UCimCCKiCCGCWACAKAgACSikyCECACyGCCKmWCCmCGCGiCCYmKCGCKQKAQAAIgiCCCCCAACCCCiCiCCGaiCCACCCGCACQkQUiEGCCQiISCGCCCCCiCCKCCCaiKCCCGKCYGCSACCACKAAUiCCCWCCGCCCCCCCiiCCgGCCCCCKCCYACUCiQAAAiCCSCGCCCWCICmiACCCCCGCCASAiKGCGCAAAAAAgaACCCAKWCGCCIigCCKiCC6CSCKCKCgACCiACAgqKCCCCGKCCCAGEKaCCgKiGCCqMCCACKCigACCCCQCEEiiAgAQCSAqCSCGCAikCSCCCCCiICCAWGCAQCQ4CAmCiCiSCSSCgiGACKw0EACKCAGCCiICyCWCWAACCUKKCgCgKCCCCCGCiCCCCaiCCCCCCAiAGSCAQiKoCCiCACACCGiCICCyCCGCKGiyAIyCSCAACGiiCCWCiCCACqACKWCiGCCCCiCCCiEKiCCCCiCCwKCCCqACSACqCiCCGiCKCKGWCCCCCCQCCyCCiiGSqCCCCQMCCCCCiCGQCCKSKCCCCQKKCSCKGACGIKCCCKGCCCCSCCCCCCKCKiCCCCCCCKSKKiiCGCyCCSOCCCgEACWiAAACCCCCCSCCGCCGAiCCKCuCCEICAAimiKGCCK2CCCqCCgSmKKSKiGCCKKCCCCCKCCACCyCmCSCCgCACCSECGSCCGgGCiCiKECwiACoCCGoKKGCCSCi2WCSGAyCCSCCCKCCCCCGCiCCCAKCGCwACCCKCCCCAgKqGCOCCKGCCCCiCKCCCWCAiSCSCSCGCCACGKKCCCCCCCiCOySmCCCCaAMiCCGSEiCAAmSSCCyKCCCAGCCGiCWCKCCCSCSACAKAGCCCCCCQKCCGCSCCCCSqiGSiSCCCqCCOCKiWGCCCCEWaCiiCGGCKCCCSCCCSCCGCGGCCiIECCCSCEkAUKGiICGAWiAGSOCSCCECKSiCSGCCGGiCAwCCCCAiSSAAGiCACCCaCCKEiSSSCGCiCCCCCKSCiCGCAIoIAOmCkiCCSQQCCiCiKqCGiKCCCCCCCCECKGCSCAAAACWKGKKamKCiCKACCCkCIiGKiCiCCCiiCiCEAiACEACiCCCCKCgCCCCCCGCWGASiiGiCAGCCiCCKACQGCCCSCCSCCCCCKGCiOCYCCCiCSSiKCWCCSCAEAAiCSCACSCiCKACGWCCQCESCCCSSCCCCGCkCCOKCAEiCCii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    <footer class="footer">
+      <div><a class="logo" href="#home">Blooming.Co<small>FLOWERS WITH FEELING</small></a><p>Flowers for every feeling. Hand-tied with love.</p></div>
+      <div><h4>Explore</h4><a href="#shop">Shop flowers</a><a href="#occasions">Occasions</a><a href="#blog">Flower journal</a></div>
+      <div><h4>Need help?</h4><a href="#checkout">Delivery & checkout</a><a href="#login">Your account</a><a href="#favorites">Favorites</a></div>
+      <div><h4>Stay in bloom</h4><p>Little notes and flower inspiration.</p><form onsubmit="event.preventDefault();toast('Terima kasih sudah berlangganan! 🌷')"><input type="email" placeholder="Email address" required><button class="btn small" type="submit">Subscribe</button></form></div>
+    </footer><div class="copyright"><span>© 2026 Blooming.Co</span><span>Made with love, for every little moment.</span></div>
+  </div><div class="toast" id="toast"></div>
 <script>
 const products=[
-{id:1,name:"Blushing Roses",type:"Roses",price:125000,desc:"Soft pink roses, wrapped with love",img:"https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=500&q=80",occ:"Birthday"},
-{id:2,name:"Sunny Side Up",type:"Sunflowers",price:98000,desc:"A little sunshine for you",img:"https://images.unsplash.com/photo-1597848212624-e6cfb8a2b1f5?auto=format&fit=crop&w=500&q=80",occ:"Thank you"},
-{id:3,name:"Golden Hour",type:"Mixed",price:145000,desc:"Warm tones, happy hearts",img:"https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=500&q=80",occ:"Birthday"},
-{id:4,name:"Tulip Daydream",type:"Tulips",price:118000,desc:"Pretty tulips, simply lovely",img:"https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=500&q=80",occ:"Just because"},
-{id:5,name:"Garden Party",type:"Mixed",price:155000,desc:"Fresh from the garden",img:"https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=500&q=80",occ:"Birthday"},
-{id:6,name:"Sweet Peony",type:"Mixed",price:138000,desc:"Soft petals, softer feelings",img:"https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=500&q=80",occ:"Thank you"},
-{id:7,name:"Little Sunshine",type:"Sunflowers",price:89000,desc:"Brighten someone's day",img:"https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=500&q=80",occ:"Just because"},
-{id:8,name:"Rosy Posy",type:"Roses",price:110000,desc:"A classic, with a twist",img:"https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=500&q=80",occ:"Birthday"}];
+{id:1,name:'Velvet Rose',type:'Roses',price:89000,tag:'Bestseller',img:'https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=600&q=85',desc:'Classic red roses, wrapped with care.'},
+{id:2,name:'Peachy Promise',type:'Mixed',price:125000,tag:'Made with love',img:'https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=600&q=85',desc:'Soft peach and blush blooms.'},
+{id:3,name:'Golden Hour',type:'Sunflowers',price:99000,tag:'Sunshine',img:'https://images.unsplash.com/photo-1597848212624-b9c1bb01f8b1?auto=format&fit=crop&w=600&q=85',desc:'Bright sunflowers to lift the day.'},
+{id:4,name:'Sunday Tulips',type:'Tulips',price:115000,tag:'New',img:'https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=600&q=85',desc:'Fresh tulips in gentle colors.'},
+{id:5,name:'Blush Affair',type:'Roses',price:145000,tag:'For someone special',img:'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=600&q=85',desc:'A romantic pink bouquet.'},
+{id:6,name:'Little Sunshine',type:'Sunflowers',price:79000,tag:'Just because',img:'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=600&q=85',desc:'A little bundle of happiness.'},
+{id:7,name:'Garden Party',type:'Mixed',price:159000,tag:'Florist choice',img:'https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=600&q=85',desc:'A colorful garden-inspired mix.'},
+{id:8,name:'Soft Spoken',type:'Tulips',price:109000,tag:'Thoughtful gift',img:'https://images.unsplash.com/photo-1457089328109-e5d9bd499191?auto=format&fit=crop&w=600&q=85',desc:'Understated blooms with meaning.'}
+];
 const articles=[
-{title:"A little care. A longer bloom.",tag:"Flower care",desc:"A few easy tips to help your flowers stay fresh and lovely for longer.",img:"https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=600&q=80"},
-{title:"Flowers that say it all",tag:"Inspiration",desc:"Find the perfect stems for the people who mean the most.",img:"https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=600&q=80"},
-{title:"Make an ordinary day special",tag:"Everyday joy",desc:"Little gestures can make the most beautiful memories.",img:"https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=600&q=80"},
-{title:"The language of flowers",tag:"Flower notes",desc:"A thoughtful guide to choosing blooms with meaning.",img:"https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=600&q=80"}];
-let favorites=JSON.parse(localStorage.getItem('bloomFavorites')||'[]'),cart=JSON.parse(localStorage.getItem('bloomCart')||'[]'),priceFilter=0,occasionFilter='';
+{title:'A little care. A longer bloom.',cat:'Flower care',img:'https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=700&q=85',desc:'Simple ways to keep your flowers fresh and make their beauty last a little longer.'},
+{title:'A little more color, a little more joy.',cat:'Flower notes',img:'https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=700&q=85',desc:'How flowers can brighten the smallest everyday moments.'},
+{title:'The art of giving flowers.',cat:'Thoughtful gifting',img:'https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=700&q=85',desc:'Find a bouquet that says what words sometimes cannot.'},
+{title:'Bring a little garden home.',cat:'Inspiration',img:'https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=700&q=85',desc:'A few easy rituals for living with flowers.'}
+];
+let favorites=JSON.parse(localStorage.getItem('bloom-favs')||'[]'),cart=JSON.parse(localStorage.getItem('bloom-cart')||'[]'),priceFilter=0,occasionFilter='';
 const money=n=>'Rp'+n.toLocaleString('id-ID');
-function card(p){return `<article class="product"><div class="photo"><img loading="lazy" src="${p.img}" alt="${p.name}"><button class="heart" onclick="toggleFav(${p.id})" aria-label="Favorit">${favorites.includes(p.id)?'♥':'♡'}</button></div><div class="name">${p.name}</div><div class="muted">${p.desc}</div><div class="product-bottom"><span class="price">${money(p.price)}</span><button class="add" onclick="addCart(${p.id})">Add to bag +</button></div></article>`}
-function articleCard(a){return `<article class="article"><img loading="lazy" src="${a.img}" alt="${a.title}"><div><span class="mini-pill">${a.tag}</span><h3>${a.title}</h3><p>${a.desc}</p><a href="#" class="textlink" onclick="toast('Artikel lengkap segera hadir 🌷');return false">Read more →</a></div></article>`}
-function renderHome(){document.getElementById('homeProducts').innerHTML=products.slice(0,4).map(card).join('');document.getElementById('homeArticles').innerHTML=articles.slice(0,2).map(articleCard).join('')}
-function renderShop(){let q=(document.getElementById('search')?.value||'').toLowerCase(),type=document.getElementById('type')?.value||'all',sort=document.getElementById('sort')?.value||'featured';let list=products.filter(p=>(p.name+' '+p.desc).toLowerCase().includes(q)&&(type==='all'||p.type===type)&&(!priceFilter||p.price<priceFilter)&&(!occasionFilter||p.occ===occasionFilter));if(sort==='low')list.sort((a,b)=>a.price-b.price);if(sort==='high')list.sort((a,b)=>b.price-a.price);document.getElementById('shopProducts').innerHTML=list.map(card).join('')||'<p>No flowers found.</p>';document.getElementById('resultCount').textContent=`Showing ${list.length} lovely blooms`}
-function toggleFav(id){favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];localStorage.setItem('bloomFavorites',JSON.stringify(favorites));updateCounts();renderHome();renderShop();renderFavorites()}
-function addCart(id){let x=cart.find(p=>p.id===id);x?x.qty++:cart.push({id,qty:1});save();updateCounts();renderCheckout();toast('Added to your bag 🌷')}
-function save(){localStorage.setItem('bloomCart',JSON.stringify(cart))}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display='none',2600)}
+function go(id){location.hash=id;showPage(id)}
+function showPage(id){id=(id||'home').replace('#','');if(!document.getElementById(id))id='home';document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav===id));document.querySelector('.nav').classList.remove('open');if(id==='shop')renderShop();if(id==='favorites')renderFavorites();if(id==='checkout')renderCheckout();window.scrollTo(0,0)}
+window.addEventListener('hashchange',()=>showPage(location.hash||'home'));
+function productCard(p){return `<article class="product"><div class="photo"><img loading="lazy" src="${p.img}" alt="${p.name}"><button class="heart" aria-label="Simpan ${p.name}" onclick="toggleFav(${p.id})">${favorites.includes(p.id)?'♥':'♡'}</button></div><span class="mini-pill">${p.tag}</span><div class="name">${p.name}</div><div class="muted">${p.desc}</div><div class="product-bottom"><span class="price">${money(p.price)}</span><button class="add" onclick="addCart(${p.id})">+ Add</button></div></article>`}
+function renderProducts(id,list){document.getElementById(id).innerHTML=list.map(productCard).join('')}
+function renderShop(){let q=(document.getElementById('search')?.value||'').toLowerCase(),type=document.getElementById('type')?.value||'all',sort=document.getElementById('sort')?.value||'featured';let list=products.filter(p=>(p.name+' '+p.type+' '+p.desc).toLowerCase().includes(q)&&(type==='all'||p.type===type)&&(!priceFilter||p.price<priceFilter)&&(!occasionFilter||true));if(sort==='low')list.sort((a,b)=>a.price-b.price);if(sort==='high')list.sort((a,b)=>b.price-a.price);document.getElementById('resultCount').textContent=`${list.length} beautiful blooms`;renderProducts('shopProducts',list)}
+function toggleFav(id){favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];localStorage.setItem('bloom-favs',JSON.stringify(favorites));updateCounts();renderProducts('homeProducts',products.slice(0,4));renderShop();renderFavorites()}
+function renderFavorites(){let list=products.filter(p=>favorites.includes(p.id));renderProducts('favoriteProducts',list);document.getElementById('emptyFav').style.display=list.length?'none':'block';document.getElementById('favoriteSubtitle').textContent=`${list.length} flowers saved`}
+function addCart(id){let found=cart.find(x=>x.id===id);if(found)found.qty++;else cart.push({id,qty:1});save();updateCounts();toast('Bunga ditambahkan ke keranjang 🌷')}
+function save(){localStorage.setItem('bloom-cart',JSON.stringify(cart))}
 function updateCounts(){document.getElementById('favCount').textContent=favorites.length||'';document.getElementById('cartCount').textContent=cart.reduce((n,x)=>n+x.qty,0)||''}
-function renderFavorites(){let list=products.filter(p=>favorites.includes(p.id));document.getElementById('favoriteProducts').innerHTML=list.map(card).join('');document.getElementById('emptyFav').style.display=list.length?'none':'block';document.getElementById('favoriteSubtitle').textContent=`${list.length} saved blooms`}
-function renderCheckout(){document.getElementById('orderItems').innerHTML=cart.length?cart.map(x=>{let p=products.find(p=>p.id===x.id);return `<div class="sumrow"><span>${p.name} × ${x.qty}</span><strong>${money(p.price*x.qty)}</strong></div>`}).join(''):'<p class="muted">Your bag is empty. <a class="textlink" href="#shop">Find some flowers</a></p>';let s=cart.reduce((n,x)=>n+products.find(p=>p.id===x.id).price*x.qty,0);document.getElementById('subtotal').textContent=money(s);document.getElementById('total').textContent=money(s+(s?15000:0))}
-function setOccasion(el,v){occasionFilter=el.checked?v:'';renderShop()}
-function go(r){location.hash=r}
-function toast(s){let t=document.getElementById('toast');t.textContent=s;t.style.display='block';clearTimeout(window._toast);window._toast=setTimeout(()=>t.style.display='none',2300)}
-function route(){let r=location.hash.slice(1)||'home';if(!document.getElementById(r))r='home';document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===r));document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav===r));document.querySelector('.nav').classList.remove('open');window.scrollTo(0,0);if(r==='shop')renderShop();if(r==='favorites')renderFavorites();if(r==='checkout')renderCheckout()}
-document.getElementById('occasionGrid').innerHTML=[['Birthday','For their special day','https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=450&q=80'],['Wedding','For the beginning of forever','https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=450&q=80'],['Anniversary','Celebrate your story','https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=450&q=80'],['Graduation','A bouquet for the big day','https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=450&q=80'],['Thank You','Say it with flowers','https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=450&q=80'],['Just Because','No reason needed','https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=450&q=80']].map(x=>`<article class="occasion-card"><img loading="lazy" src="${x[2]}" alt="${x[0]}"><h3>${x[0]}</h3><p class="muted">${x[1]}</p><a href="#shop" class="textlink" onclick="occasionFilter='${x[0]}';">Shop flowers →</a></article>`).join('');
-document.getElementById('blogArticles').innerHTML=articles.map(articleCard).join('');renderHome();renderShop();renderFavorites();renderCheckout();updateCounts();window.addEventListener('hashchange',route);route();
+function renderCheckout(){let items=cart.map(x=>({...products.find(p=>p.id===x.id),qty:x.qty})).filter(x=>x.id);document.getElementById('orderItems').innerHTML=items.length?items.map(p=>`<div class="sumrow"><span>${p.name} × ${p.qty}</span><strong>${money(p.price*p.qty)}</strong></div>`).join(''):'<p class="muted">Keranjang masih kosong. <a href="#shop">Pilih bunga dulu.</a></p>';let subtotal=items.reduce((n,p)=>n+p.price*p.qty,0);document.getElementById('subtotal').textContent=money(subtotal);document.getElementById('total').textContent=money(subtotal+(items.length?15000:0))}
+const occasions=[['Birthday','Celebrate their day','https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=600&q=85'],['Wedding','For the beginning','https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=600&q=85'],['Anniversary','Love, in full bloom','https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=600&q=85'],['Congratulations','A beautiful new chapter','https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=600&q=85'],['Thank You','A little gratitude','https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=600&q=85'],['Just Because','No reason needed','https://images.unsplash.com/photo-1457089328109-e5d9bd499191?auto=format&fit=crop&w=600&q=85']];
+function renderArticles(id){document.getElementById(id).innerHTML=articles.map(a=>`<article class="article"><img loading="lazy" src="${a.img}" alt="${a.title}"><div><span class="muted">${a.cat} · 4 min read</span><h3>${a.title}</h3><p>${a.desc}</p><a class="textlink" href="#blog" onclick="toast('Cerita lengkap segera hadir 🌷')">Read story →</a></div></article>`).join('')}
+document.getElementById('occasionGrid').innerHTML=occasions.map(o=>`<article class="occasion-card"><img loading="lazy" src="${o[2]}" alt="${o[0]} flowers"><h3>${o[0]}</h3><p class="muted">${o[1]}</p><button class="btn outline small" onclick="go('shop')">Find flowers →</button></article>`).join('');
+renderProducts('homeProducts',products.slice(0,4));renderArticles('homeArticles');renderArticles('blogArticles');renderShop();renderFavorites();updateCounts();showPage(location.hash||'home');
 </script></body></html>
